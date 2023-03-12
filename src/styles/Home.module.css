@@ -81,7 +81,7 @@
 }
 
 .center::before {
-  background: var(--secondary-glow);
+  --background: var(--secondary-glow);
   border-radius: 50%;
   width: 480px;
   height: 360px;
@@ -89,7 +89,7 @@
 }
 
 .center::after {
-  background: var(--primary-glow);
+  --background: var(--primary-glow);
   width: 240px;
   height: 180px;
   z-index: -1;
@@ -136,19 +136,6 @@
   width: 200%;
   height: 200%;
   background: var(--tile-border);
-}
-
-/* Inner Square */
-.thirteen::after {
-  inset: 0;
-  padding: 1px;
-  border-radius: var(--border-radius);
-  background: linear-gradient(
-    to bottom right,
-    rgba(var(--tile-start-rgb), 1),
-    rgba(var(--tile-end-rgb), 1)
-  );
-  background-clip: content-box;
 }
 
 /* Enable hover only on non-touch devices */
@@ -254,17 +241,6 @@
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
     grid-template-columns: repeat(2, 50%);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-
-  .logo,
-  .thirteen img {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
   }
 }
 
