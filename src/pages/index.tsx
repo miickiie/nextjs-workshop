@@ -28,8 +28,8 @@ export default function Home() {
             className={styles.logo}
             src="/agoda.svg"
             alt="Agoda Logo"
-            width={180}
-            height={80}
+            width={800}
+            height={240}
             priority
           />
         </div>
@@ -47,7 +47,7 @@ export default function Home() {
             </p>
           </Link>
 
-          <a
+          <Link
               href="/about"
             className={styles.card}
           >
@@ -57,7 +57,44 @@ export default function Home() {
             <p className={inter.className}>
               Compare client-side navigation with browser navigation (Anchor)
             </p>
-          </a>
+          </Link>
+
+          <Link
+              href="/static"
+              className={styles.card}
+          >
+            <h2 className={inter.className}>
+              Static Props Example<span>-&gt;</span>
+            </h2>
+            <p className={inter.className}>
+              This gets called on build time
+            </p>
+          </Link>
+
+          <Link
+              href="/server"
+              className={styles.card}
+          >
+            <h2 className={inter.className}>
+              ServerSide Props Example<span>-&gt;</span>
+            </h2>
+            <p className={inter.className}>
+              This gets called on every request
+            </p>
+          </Link>
+
+          <Link
+              href="/persons"
+              className={styles.card}
+          >
+            <h2 className={inter.className}>
+              Static Props Example<span>-&gt;</span>
+            </h2>
+            <p className={inter.className}>
+              Another example of static props
+            </p>
+          </Link>
+
         </div>
       </main>
     </>

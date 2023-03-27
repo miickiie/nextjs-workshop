@@ -9,6 +9,9 @@ export default function City(props: Props) {
 };
 
 
+/*
+`getStaticPaths` is a function in Next.js used for generating dynamic routes at build time by specifying paths to pre-render during the build process.
+this will create a list of paths with the required parameters for every dynamic page that needs to be statically generated.*/
 export async function getStaticPaths() {
     const city_names = await readCityNames();
     const paths = city_names.map((city_name) => ({
@@ -16,7 +19,7 @@ export async function getStaticPaths() {
     }));
     return {
         paths,
-        fallback: false, // can also be true or 'blocking'
+        fallback: false, // The `fallback` key is set to `false`, which means that any path not returned by `getStaticPaths` will result in a 404 page.
     }
   }
 
