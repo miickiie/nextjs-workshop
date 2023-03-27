@@ -1,10 +1,13 @@
 import readCityNames from "@/lib/readCityNames";
 
-const City = ({ cityName }) => {
-  return <h1>City: {cityName}</h1>;
+interface Props {
+    cityName: String;
+}
+
+export default function City(props: Props) {
+    return <h1>City: {props.cityName}</h1>;
 };
 
-export default City;
 
 export async function getStaticPaths() {
     const city_names = await readCityNames();
@@ -18,7 +21,7 @@ export async function getStaticPaths() {
   }
 
 // `getStaticPaths` requires using `getStaticProps`
-export async function getStaticProps(context) {
+export async function getStaticProps(context: any) {
     return {
         // Passed to the page component as props
         props: { cityName: context.params.city_name },
